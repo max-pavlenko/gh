@@ -1,6 +1,6 @@
 import {ChangeEventHandler, ComponentProps, FC, FormEventHandler, useState} from 'react'
-import Input from "@/shared/ui/atoms/Input";
-import Button from "@/shared/ui/atoms/Button";
+import Input from "@/app/shared/ui/atoms/Input";
+import Button from "@/app/shared/ui/atoms/Button";
 
 export type Props = Omit<ComponentProps<'form'>, 'onSubmit'> & {onSubmit: ({username}: { username: string }) => void};
 

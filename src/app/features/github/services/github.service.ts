@@ -1,5 +1,5 @@
-import {GithubUser} from "@/shared/types/users";
 import {clientApi} from "@/api/axios";
+import {GithubUser} from "@/app/features/github/types/users";
 
 class GithubService {
    async getUserByName(username: GithubUser['login']) {

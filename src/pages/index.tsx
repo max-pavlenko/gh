@@ -1,15 +1,14 @@
-import {useQuery, useQueryClient} from "@tanstack/react-query";
-import Loader from "@/shared/ui/atoms/Loader";
-import GithubService from "@/features/github/services/github.service";
+import {useQuery} from "@tanstack/react-query";
 import {useState} from "react";
-import Image from "next/image";
-import FormUserSearch, {Props as FormUserSearchProps} from "@/features/github/components/organisms/FormUserSearch";
-import CardGithubUser from "@/features/github/components/molecules/CardGithubUser";
-import Button from "@/shared/ui/atoms/Button";
+import GithubService from "@/app/features/github/services/github.service";
+import {getGithubUserKey} from "@/app/features/github/constants/queryKeys";
+import Loader from "@/app/shared/ui/atoms/Loader";
+import CardGithubUser from "@/app/features/github/components/molecules/CardGithubUser";
+import FormUserSearch, {Props as FormUserSearchProps} from "@/app/features/github/components/organisms/FormUserSearch";
 
 export default function Home() {
    const [username, setUsername] = useState('');
-   const {isError, data, isFetching, isSuccess} = useQuery([`githubUser/${username}`], () => GithubService.getUserByName(username), {
+   const {isError, data, isFetching, isSuccess} = useQuery([getGithubUserKey(username)], () => GithubService.getUserByName(username), {
       enabled: !!username,
    })
 

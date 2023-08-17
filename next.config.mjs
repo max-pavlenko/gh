@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-import PUBLIC_RUNTIME_CONFIG from './src/shared/utils/publicRuntimeConfig.mjs';
+import PUBLIC_RUNTIME_CONFIG from './src/app/shared/utils/publicRuntimeConfig.mjs';
 
 const nextConfig = {
     reactStrictMode: true,

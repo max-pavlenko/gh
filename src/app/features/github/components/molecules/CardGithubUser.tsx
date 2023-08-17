@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import Image from "next/image";
-import {GithubUser} from "@/shared/types/users";
+import {GithubUser} from "@/app/features/github/types/users";
 
 type Props = {
    user: GithubUser;
